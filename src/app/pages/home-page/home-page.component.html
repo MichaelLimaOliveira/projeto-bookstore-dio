@@ -1,0 +1,19 @@
+<app-header (searchEvent)="returnFilterTitleBook($event)"></app-header>
+<section class="row justify-content-center">
+  <div class="card p-1 m-1" style="width: 18rem;" *ngFor="let item of viewBooks">
+    <img class="card-img-top" [src]="item.image" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <p class="card-text">Author: {{item.author}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><textarea class="text-area">{{item.summary}}</textarea></li>
+      <li class="list-group-item">Price: {{item.price.displayValue | currency}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Buy</a>
+      <a href="#" class="card-link">Add to cart</a>
+    </div>
+  </div>
+</section>
+
